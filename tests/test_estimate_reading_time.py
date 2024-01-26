@@ -24,3 +24,9 @@ def test_sub_hour_text():
 def test_over_hour_text():
     estimated_time = estimate_reading_time(at_the_mountains_of_madness)
     assert estimated_time == 'Estimated reading time: 3 hours and 22 minutes.'
+
+# if reading time is equal to one hour and/or one minute, estimated time shouldn't be in plural
+
+def test_singular_hour_and_minute():
+    estimated_time = estimate_reading_time(shadow_over_innsmouth)
+    assert estimated_time == 'Estimated reading time: 1 hour and 1 minute'

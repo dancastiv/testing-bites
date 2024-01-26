@@ -6,14 +6,14 @@ def estimate_reading_time(text):
         return 'Estimated reading time: less than a minute.'
     if word_count >= 200:
         time = word_count / 200
-        hours = time//60
-        minutes = time%60
+        hours = round(time//60)
+        minutes = round(time%60)
         if hours < 1:
-            return f'Estimated reading time: {round(minutes)} minutes.'
+            return f'Estimated reading time: {minutes} minutes.'
         elif hours == 1:
-            return f'Estimated reading time: {round(hours)} hour and {round(minutes)} minutes.'
+            return f'Estimated reading time: {hours} hour and {minutes} minutes.'
         elif hours > 1:
-            return f'Estimated reading time: {round(hours)} hours and {round(minutes)} minutes.'
+            return f'Estimated reading time: {hours} hours and {minutes} minutes.'
     
 
 
